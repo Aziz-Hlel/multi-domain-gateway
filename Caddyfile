@@ -30,7 +30,7 @@ www.admin.voltobahrain.online {
 
 admin.voltobahrain.online {
 
-	reverse_proxy volto-resverse-proxy:3001 {
+	reverse_proxy volto-reverse-proxy:3001 {	
 		header_up Host {host}
 		header_up X-Real-IP {remote_host}
 		header_up X-Forwarded-For {remote_host}
