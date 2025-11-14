@@ -17,9 +17,20 @@ ygp.ae {
 
 
 
-# www.voltobahrain.online {
-#     redir https://voltobahrain.online{uri} permanent
-# }
+www.voltobahrain.online {
+    redir https://voltobahrain.online{uri} permanent
+}
+
+admin.voltobahrain.online {
+
+	reverse_proxy volto-reverse-proxy:3001 {
+		header_up Host {host}
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+
+}
 
 
 www.admin.voltobahrain.online {
@@ -30,7 +41,7 @@ www.admin.voltobahrain.online {
 
 admin.voltobahrain.online {
 
-	reverse_proxy volto-reverse-proxy:3001 {
+	reverse_proxy volto-reverse-proxy:3002 {
 		header_up Host {host}
 		header_up X-Real-IP {remote_host}
 		header_up X-Forwarded-For {remote_host}
