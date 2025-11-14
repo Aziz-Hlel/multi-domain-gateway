@@ -21,7 +21,10 @@ www.voltobahrain.online {
     redir https://voltobahrain.online{uri} permanent
 }
 
-admin.voltobahrain.online {
+
+
+
+voltobahrain.online {
 
 	reverse_proxy volto-reverse-proxy:3001 {
 		header_up Host {host}
@@ -33,11 +36,12 @@ admin.voltobahrain.online {
 }
 
 
+
+
+
 www.admin.voltobahrain.online {
     redir https://admin.voltobahrain.online{uri} permanent
 }
-
-
 
 admin.voltobahrain.online {
 
@@ -49,4 +53,7 @@ admin.voltobahrain.online {
 	}
 
 }
+
+
+
 
