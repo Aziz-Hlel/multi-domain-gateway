@@ -11,7 +11,7 @@ services:
       - gateway-config:/config
 
     networks:
-      - ygp_network
+      - ygp-network
 
 volumes:
   gateway-data:
@@ -19,6 +19,6 @@ volumes:
 
 
 networks:
-  ygp_network :
+  ygp-network :
     external: true
 
