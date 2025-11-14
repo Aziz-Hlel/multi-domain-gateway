@@ -7,15 +7,18 @@ services:
       - "443:443"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
-      - caddy-prod-data:/data
-      - caddy-prod-config:/config
+      - gateway-data:/data
+      - gateway-config:/config
 
     networks:
       - ygp_network
-      
+
+volumes:
+  gateway-data:
+  gateway-config:
+
 
 networks:
   ygp_network :
     external: true
-
 
