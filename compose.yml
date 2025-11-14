@@ -1,0 +1,21 @@
+
+services:
+  gateway:
+    image: caddy:2.6.2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy-prod-data:/data
+      - caddy-prod-config:/config
+
+    networks:
+      - ygp_network
+      
+
+networks:
+  ygp_network :
+    external: true
+
+

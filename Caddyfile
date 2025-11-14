@@ -1,0 +1,16 @@
+www.ygp.ae {
+    redir https://ygp.ae{uri} permanent
+}
+
+
+
+ygp.ae {
+
+    reverse_proxy ygp-resverse-proxy:5001 {
+        header_up Host {host}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto {scheme}
+    }
+
+}
