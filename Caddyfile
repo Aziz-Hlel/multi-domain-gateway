@@ -2,8 +2,6 @@ www.ygp.ae {
     redir https://ygp.ae{uri} permanent
 }
 
-
-
 ygp.ae {
 
     reverse_proxy ygp-reverse-proxy:5001 {
@@ -17,12 +15,10 @@ ygp.ae {
 
 
 
+
 www.voltobahrain.online {
     redir https://voltobahrain.online{uri} permanent
 }
-
-
-
 
 voltobahrain.online {
 
@@ -34,10 +30,6 @@ voltobahrain.online {
 	}
 
 }
-
-
-
-
 
 www.admin.voltobahrain.online {
     redir https://admin.voltobahrain.online{uri} permanent
@@ -55,5 +47,22 @@ admin.voltobahrain.online {
 }
 
 
+
+
+
+www.sema-sim.com {
+    redir https://sema-sim.com{uri} permanent
+}
+
+
+sema-sim.com {
+
+	reverse_proxy schoolranking-reverse-proxy:8000 {
+		header_up Host {host}
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+}
 
 

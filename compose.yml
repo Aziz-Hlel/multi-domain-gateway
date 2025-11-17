@@ -13,7 +13,7 @@ services:
     networks:
       - ygp-network
       - volto-network
-      # - schoolranking-network
+      - schoolranking-network
 
 volumes:
   gateway-data:
@@ -23,8 +23,8 @@ volumes:
 networks:
   ygp-network :
     external: true
-  # schoolranking-network :
-    # external: true
+  schoolranking-network :
+    external: true
   volto-network :
     external: true
 
