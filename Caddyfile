@@ -1,3 +1,6 @@
+
+### YGP.ae
+
 www.ygp.ae {
     redir https://ygp.ae{uri} permanent
 }
@@ -14,6 +17,7 @@ ygp.ae {
 }
 
 
+### voltobahrain.online
 
 
 www.voltobahrain.online {
@@ -47,7 +51,41 @@ admin.voltobahrain.online {
 }
 
 
+### voltobahrain.com
 
+
+www.voltobahrain.com {
+    redir https://voltobahrain.com{uri} permanent
+}
+
+voltobahrain.com {
+
+	reverse_proxy volto-reverse-proxy:3001 {
+		header_up Host {host}
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+
+}
+
+www.admin.voltobahrain.com {
+    redir https://admin.voltobahrain.com{uri} permanent
+}
+
+admin.voltobahrain.com {
+
+	reverse_proxy volto-reverse-proxy:3002 {
+		header_up Host {host}
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+
+}
+
+
+### sema-sim.com
 
 
 www.sema-sim.com {
