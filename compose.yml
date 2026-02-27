@@ -14,6 +14,7 @@ services:
       - ygp-network
       - volto-network
       - schoolranking-network
+      - luxuria-network
 
 volumes:
   gateway-data:
@@ -26,5 +27,7 @@ networks:
   schoolranking-network :
     external: true
   volto-network :
+    external: true
+  luxuria-network :
     external: true
 

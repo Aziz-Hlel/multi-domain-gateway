@@ -104,3 +104,21 @@ sema-sim.com {
 }
 
 
+
+### luxuria-network.com
+
+www.luxuria-network.com {
+    redir https://luxuria-network.com{uri} permanent
+}
+
+luxuria-network.com {
+
+	reverse_proxy luxuria-reverse-proxy:4000 {
+		header_up Host {host}
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+
+}
+
