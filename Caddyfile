@@ -122,3 +122,38 @@ luxuriabahrain.com {
 
 }
 
+
+
+
+### teresbahrain.com
+
+www.teresbahrain.com {
+	redir https://teresbahrain.com{uri} permanent
+}
+
+teresbahrain.com {
+
+	reverse_proxy teres-reverse-proxy:3000 {
+		header_up Host {host}
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+
+}
+
+
+www.admin.teresbahrain.com {
+	redir https://admin.teresbahrain.com{uri} permanent
+}
+
+admin.teresbahrain.com {
+
+	reverse_proxy teres-reverse-proxy:3001 {
+		header_up Host {host}
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+
+}

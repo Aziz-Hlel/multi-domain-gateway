@@ -15,6 +15,7 @@ services:
       - volto-network
       - schoolranking-network
       - luxuria-network
+      - teres-network
 
 volumes:
   gateway-data:
@@ -30,4 +31,5 @@ networks:
     external: true
   luxuria-network :
     external: true
-
+  teres-network :
+    external: true
