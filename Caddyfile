@@ -157,3 +157,37 @@ admin.teresbahrain.com {
 	}
 
 }
+
+
+
+
+### jjsirishrestaurant.com
+
+www.jjsirishrestaurant.com {
+	redir https://jjsirishrestaurant.com{uri} permanent
+}
+
+jjsirishrestaurant.com {
+
+	reverse_proxy jj-reverse-proxy:3000 {
+		header_up Host {host}
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+}
+
+
+www.admin.jjsirishrestaurant.com {
+	redir https://admin.jjsirishrestaurant.com{uri} permanent
+}
+
+admin.jjsirishrestaurant.com {
+
+	reverse_proxy jj-reverse-proxy:3001 {
+		header_up Host {host}
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+}

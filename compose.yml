@@ -16,6 +16,7 @@ services:
       - schoolranking-network
       - luxuria-network
       - teres-network
+      - jj-network
 
 volumes:
   gateway-data:
@@ -32,4 +33,6 @@ networks:
   luxuria-network :
     external: true
   teres-network :
+    external: true
+  jj-network :
     external: true
